@@ -24,5 +24,8 @@ public class PagamentosModel {
     @Column(length = 10, nullable = false)
     private BigDecimal diferenca;
 
+    @Column(length = 10, nullable = false)
+    private BigDecimal valorPago;
+
 
 }

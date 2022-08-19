@@ -13,10 +13,12 @@ import java.util.Optional;
 @Service
 public class PagamentosService {
     @Autowired
-private  PagamentosRepository pagamentosRepository;
-    public  List<PagamentosModel> buscarPagamentos() {
+    private PagamentosRepository pagamentosRepository;
+
+    public List<PagamentosModel> buscarPagamentos() {
         return pagamentosRepository.findAll();
     }
+
     public Optional<PagamentosModel> buscarId(Long codigo) {
         return pagamentosRepository.findById(codigo);
     }
@@ -28,7 +30,7 @@ private  PagamentosRepository pagamentosRepository;
         pagamentosModel.getCodigo();
         pagamentosModel.getValorAPagar();
         pagamentosModel.getDiferenca();
-pagamentosModel.setValorPago(valor);
+        pagamentosModel.setValorPago(valor);
         return pagamentosRepository.save(pagamentosModel);
     }
 
@@ -42,9 +44,9 @@ pagamentosModel.setValorPago(valor);
         return pagamentosRepository.save(pagamentos);
     }
 
-    public void deletar(Long      codigo) {
+    public void deletar(Long codigo) {
         pagamentosRepository.deleteById(codigo);
     }
 
 
-    }
+}
